@@ -1,0 +1,26 @@
+# Constraints for ALINX AX309 FPGA Dev board.
+# Sample Code: https://github.com/alinxalinx/AX309
+
+# Author: koos.dupreez@terraclear.com
+# Target Device: Xilinx Spartan 6 (xc6slx9-2ftg256)
+
+# Using 50Mhz Clock
+NET "clk" LOC = T8 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50 mHz;
+
+# 7 x Segment pins and 1 sel (enable) pin per digit.
+# AX309 Board supports 6 x Digits
+NET seg_data<0>            LOC = C7 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_data<1>            LOC = E6 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST; 
+NET seg_data<2>            LOC = C5 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_data<3>            LOC = F7 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_data<4>            LOC = D6 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_data<5>            LOC = E7 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_data<6>            LOC = D5 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_data<7>            LOC = C6 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST; 
+NET seg_sel<0>             LOC = D9  | IOSTANDARD = "LVCMOS33" | SLEW=FAST;
+NET seg_sel<1>             LOC = E10 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;
+NET seg_sel<2>             LOC = F10 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;
+NET seg_sel<3>             LOC = F9 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_sel<4>             LOC = E8 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST;
+NET seg_sel<5>             LOC = D8 | IOSTANDARD = "LVCMOS33"  | SLEW=FAST; 
